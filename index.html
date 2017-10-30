@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html   ng-app="myApp">
     <head>
         <title>Barcode Scanner</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="css/style.css">
+       
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <script src="https://use.fontawesome.com/2289ac91a1.js"></script>
     </head>
     <body>
-        <div  ng-app="myApp">
+        <div ng-controller="qrCrtl">
             <header ng-include="'pages/header.html'"></header>
-           
+            <qr-scanner width="400" height="300"  ng-success="onSuccess(data)" ng-error="onError(error)" />
+            
+        </div>
                 <footer ng-include="'pages/footer.html'"></footer>   
             </div>  
               
@@ -21,6 +24,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="app.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        
+        <script src="bower_components/angular-qr-scanner/qr-scanner.js"></script>
+        <script src="bower_components/angular-qr-scanner/src/jsqrcode-combined.min.js"></script>
     </body>
 </html>
